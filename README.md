@@ -101,7 +101,7 @@ More in [docs/transcripts](docs/transcripts/), including a vague message that ge
 - The model picks the intent and returns structured output. If it isn't confident, the agent asks one clarifying question, with a few phrases the customer can type.
 - Four connection checks run in parallel, each with its own timeout. A fixed table turns their results into one of six verdicts; the model never decides the diagnosis.
 - Identity checks and ticket changes pause the graph with `interrupt()` and wait for the customer. Ticket writes are deduplicated and idempotent.
-- Replies come from templates. With a live model, the model may reorder the template's sentences and add one short courtesy phrase. A validator rejects anything else, and the template is sent.
+- Replies come from templates. With a live model, the model may reorder the template's sentences and add one short courtesy phrase at the start (or a thanks at the end). A validator rejects anything else, and the template is sent.
 
 ## Results
 
@@ -117,7 +117,7 @@ More in [docs/transcripts](docs/transcripts/), including a vague message that ge
 **Dev** (104 messages, used to build the prompt): 98/104 through the graph, 36/36 critical.
 **Test** (102 messages written during development, so not independent; expect an optimistic score): 100/102 through the graph, 30/30 critical. Rules alone catch 17/30.
 
-**Reply rewriting.** In 70 recorded conversations with the local model (381 replies), 263 of 294 rewrite attempts were sent. 27 ran out of time and 4 dropped a required sentence, so the template went out instead. No reply leaked technical data, and every required fact was kept. A full turn, classification included, takes about 4 s at the median and reaches the 8 s cap at p95 on a laptop. An earlier trial missed the 3 s target set before it (4.3 s at p95 for the rewrite alone); after seeing that, the limit was raised to 8 s, since a few seconds is normal in a WhatsApp chat, and the rewritten replies were preferred in a side-by-side read.
+**Reply rewriting.** In 70 recorded conversations with the local model (381 replies), 262 of 294 rewrite attempts were sent. 27 ran out of time, 4 dropped a required sentence and 1 put an acknowledgement after the closing question, so the template went out instead. No reply leaked technical data, and every required fact was kept. A full turn, classification included, takes about 4 s at the median and reaches the 8 s cap at p95 on a laptop. An earlier trial missed the 3 s target set before it (4.3 s at p95 for the rewrite alone); after seeing that, the limit was raised to 8 s, since a few seconds is normal in a WhatsApp chat, and the rewritten replies were preferred in a side-by-side read.
 
 If the model is down or slow and the rules don't recognize a message, the customer gets a clarifying question and staff get an "unclassified message" alert, so a missed outage still reaches a person.
 

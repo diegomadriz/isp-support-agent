@@ -336,6 +336,7 @@ def metrics(bundle):
                         "duplicate_required_fact",
                         "action_question_order",
                         "too_many_courtesies",
+                        "courtesy_out_of_place",
                     }
                     and not reason.startswith("tone_")
                 )
@@ -546,7 +547,7 @@ def write_results(result, output):
     lines = [
         "# Customer reply rewriting",
         "",
-        "The model may reorder template sentences and add one short courtesy phrase. Facts stay word for word. Actions and questions keep their order. The closed courtesy list prevents extra content; greetings are allowed only in the first reply, and angry messages allow only a calm acknowledgement. No reply contains two apologies.",
+        "The model may reorder template sentences and add one short courtesy phrase. Acknowledgements open the reply; only the thanks may close it. Facts stay word for word. Actions and questions keep their order. The closed courtesy list prevents extra content; greetings are allowed only in the first reply, and angry messages allow only a calm acknowledgement. No reply contains two apologies.",
         "",
         "Both arms use live local gemma4 through the current graph. Classification gets up to six seconds within an eight-second turn budget. Rewriting starts only with at least 1.5 seconds left; otherwise the template is sent. Every recorded conversation includes identity and any ticket consent.",
         "",

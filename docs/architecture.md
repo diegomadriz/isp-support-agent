@@ -31,7 +31,7 @@ Typing «otra cosa» asks an open question. Repeating the same unclear message o
 
 ## Replies
 
-Customer replies contain only `message` and `awaiting`. Staff evidence never enters the customer channel. The reply node renders a Spanish template; a separate rewrite node may reorder its sentences and add one short stock courtesy. Facts stay word for word. Actions, questions and options keep their relative order. A closed courtesy list rejects any other added content, alongside explicit checks for infrastructure, numbers, identifiers and tone. Greetings are allowed only in the first reply; angry messages allow only a calm acknowledgement and no reply allows two apologies. These literal checks do not establish semantic understanding.
+Customer replies contain only `message` and `awaiting`. Staff evidence never enters the customer channel. The reply node renders a Spanish template; a separate rewrite node may reorder its sentences and add one short stock courtesy; acknowledgements open the reply and only the thanks may close it. Facts stay word for word. Actions, questions and options keep their relative order. A closed courtesy list rejects any other added content, alongside explicit checks for infrastructure, numbers, identifiers and tone. Greetings are allowed only in the first reply; angry messages allow only a calm acknowledgement and no reply allows two apologies. These literal checks do not establish semantic understanding.
 
 Rewriting defaults on with a live model and off with the stub. It never runs before verification or on staff notes. The model receives public clauses and a bounded style profile, never raw customer text or evidence. Both templates and rewrites use tú or usted consistently. Errors, timeout or rejection send the template.
 

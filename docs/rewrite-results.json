@@ -24,11 +24,12 @@
   "verified_messages": 294,
   "attempted": 294,
   "skipped_unverified": 87,
-  "accepted": 263,
-  "acceptance_rate": 0.8945578231292517,
-  "accepted_changed": 30,
+  "accepted": 262,
+  "acceptance_rate": 0.891156462585034,
+  "accepted_changed": 28,
   "reasons": {
-    "accepted": 263,
+    "accepted": 262,
+    "courtesy_out_of_place": 1,
     "missing_required_fact": 4,
     "timeout": 27
   },
@@ -38,27 +39,27 @@
   "facts_preserved_messages": 381,
   "required_facts_preserved": 1.0,
   "turn_latency_ms": {
-    "p50": 4131.606,
-    "p95": 8005.621
+    "p50": 4036.667,
+    "p95": 8004.946
   },
   "verified_turn_latency_ms": {
-    "p50": 5582.574,
-    "p95": 8005.901
+    "p50": 5534.676,
+    "p95": 8005.456
   },
   "added_latency_ms": {
-    "p50": 3441.809,
-    "p95": 4124.453
+    "p50": 3447.352,
+    "p95": 4033.68
   },
   "model_latency_ms": {
-    "p50": 2051.605,
-    "p95": 4114.295
+    "p50": 2048.652,
+    "p95": 4020.518
   },
   "length_change_percent": {
-    "mean": 3.966,
+    "mean": 3.808,
     "p50": 0.0,
     "p95": 27.778
   },
-  "paired_route_changes": 1,
+  "paired_route_changes": 0,
   "automatic_checks": {
     "zero_leaks": true,
     "all_required_facts": true,

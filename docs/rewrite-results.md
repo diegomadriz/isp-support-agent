@@ -1,6 +1,6 @@
 # Customer reply rewriting
 
-The model may reorder template sentences and add one short courtesy phrase. Facts stay word for word. Actions and questions keep their order. The closed courtesy list prevents extra content; greetings are allowed only in the first reply, and angry messages allow only a calm acknowledgement. No reply contains two apologies.
+The model may reorder template sentences and add one short courtesy phrase. Acknowledgements open the reply; only the thanks may close it. Facts stay word for word. Actions and questions keep their order. The closed courtesy list prevents extra content; greetings are allowed only in the first reply, and angry messages allow only a calm acknowledgement. No reply contains two apologies.
 
 Both arms use live local gemma4 through the current graph. Classification gets up to six seconds within an eight-second turn budget. Rewriting starts only with at least 1.5 seconds left; otherwise the template is sent. Every recorded conversation includes identity and any ticket consent.
 
@@ -9,21 +9,21 @@ Both arms use live local gemma4 through the current graph. Classification gets u
 | Conversations | 70 |
 | Sent replies | 381 |
 | Rewrite attempts | 294 |
-| Accepted | 263/294 (89.5%) |
+| Accepted | 262/294 (89.1%) |
 | Delivered leaks | 0 |
 | Required facts | 381/381 |
 | Detected tone violations | 0 |
-| Complete turn latency median | 4131.606 ms |
-| Complete turn latency p95 | 8005.621 ms |
-| Verified turn latency median | 5582.574 ms |
-| Verified turn latency p95 | 8005.901 ms |
-| Added latency median | 3441.809 ms |
-| Added latency p95 | 4124.453 ms |
-| Mean length change | 3.966% |
+| Complete turn latency median | 4036.667 ms |
+| Complete turn latency p95 | 8004.946 ms |
+| Verified turn latency median | 5534.676 ms |
+| Verified turn latency p95 | 8005.456 ms |
+| Added latency median | 3447.352 ms |
+| Added latency p95 | 4033.68 ms |
+| Mean length change | 3.808% |
 
-Result codes: `{"accepted": 263, "missing_required_fact": 4, "timeout": 27}`.
+Result codes: `{"accepted": 262, "courtesy_out_of_place": 1, "missing_required_fact": 4, "timeout": 27}`.
 Raw tone flags: `{}`.
-Paired turns with a different node path: 1.
+Paired turns with a different node path: 0.
 
 Timing starts at the chat turn call and ends when the reply returns, including classification, graph work and rewriting. It excludes the WhatsApp queue and outbound delivery. Replay uses the recorded clock to reproduce rewrite eligibility; it does not measure live speed. Added latency compares matched input turns from the two arms, whose model predictions can differ.
 

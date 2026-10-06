@@ -62,6 +62,20 @@ def test_courtesy_rejections_are_explicit(addition, code):
     assert rejection_reason(addition + text, public_facts(text)) == code
 
 
+@pytest.mark.parametrize(
+    "candidate,code",
+    [
+        ("Registré el folio 1001. ¿Algo más? Claro.", "courtesy_out_of_place"),
+        ("Registré el folio 1001. Entiendo. ¿Algo más?", "courtesy_out_of_place"),
+        ("Claro. Registré el folio 1001. ¿Algo más?", None),
+        ("Registré el folio 1001. ¿Algo más? Gracias por escribirnos.", None),
+    ],
+)
+def test_acknowledgements_open_the_reply(candidate, code):
+    text = "Registré el folio 1001. ¿Algo más?"
+    assert rejection_reason(candidate, public_facts(text)) == code
+
+
 @pytest.mark.parametrize("addition", ["Hola. ", "Claro. ", "Con gusto. "])
 def test_angry_messages_only_allow_calm_courtesy(addition):
     text = "Registré el folio 1001."

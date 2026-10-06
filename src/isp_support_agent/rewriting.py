@@ -212,6 +212,13 @@ def rejection_reason(candidate, facts: dict) -> str | None:
     positions = [candidate.find(c) for c in facts.get("ordered_clauses", [])]
     if all(p >= 0 for p in positions) and positions != sorted(positions):
         return "action_question_order"
+    # Acknowledgements answer the customer, so they open the reply; only the thanks may close it.
+    first = min((candidate.find(c) for c in facts["required_clauses"] if c in candidate), default=0)
+    for phrase in facts["allowed_courtesies"]:
+        if phrase.startswith("Gracias") or phrase not in candidate:
+            continue
+        if candidate.rfind(phrase) > first:
+            return "courtesy_out_of_place"
     remainder = candidate.strip()
     for clause in facts["required_clauses"]:
         if clause not in remainder:
