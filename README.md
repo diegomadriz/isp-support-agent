@@ -136,7 +136,18 @@ Docker image (non-root, health and readiness checks, a volume for conversation s
 
 ## Limits
 
-Not tested against a real ticket system, network devices, live WhatsApp delivery or a hosted OpenAI-compatible model. It runs as a single process. Anyone who types three wrong codes can lock an account for 15 minutes, and there's no notification for the account holder. The rewrite validator checks literal sentences, not meaning. The evaluation messages are synthetic.
+- Not tested against a real ticket system, network devices, live WhatsApp delivery or a hosted OpenAI-compatible model.
+- It runs as a single process, and retention of conversation data is manual.
+- The second factor is the last four digits of the phone on file, which is weak. Anyone who types three wrong codes locks that customer for 15 minutes, and the account holder isn't notified.
+- Staff alerts are written to a local ledger. They aren't sent anywhere and the staff panel doesn't show them. Messages dropped by rate limits raise no alert.
+- The staff panel is safe only on loopback; don't put it behind a public proxy.
+- Diagnostics check the customer's first service only.
+- If an outbound WhatsApp send fails and is retried, the customer can get the reply twice.
+- LangGraph Studio mode skips the runtime's admission, locks, deadline and persistence. `/readyz` doesn't check the model.
+- The eight-second deadline bounds model calls; it doesn't cancel graph work. Timings exclude queueing and delivery.
+- The rewrite validator checks literal sentences, not meaning. Rewrites have no scored human-preference evaluation, and operational impact isn't measured.
+- The evaluation messages are synthetic; the dev and test sets were written during development, so they aren't independent. Routing evaluation doesn't cover identity checks or ticket writes.
+- Local launch pulls a model tag, which can change; reproducing the recorded results needs the digest check in `eval/model-config.json`.
 
 Built for GNS's customer-support flow during a university project, then reworked into this version. It runs against a mock ticket API and a simulated network and was never connected to GNS's systems.
 
