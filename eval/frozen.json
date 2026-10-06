@@ -1,0 +1,16 @@
+{
+  "purpose": "Frozen evaluation text; split roles do not imply independence.",
+  "authorship": "Test: synthetic, written by the same builder after reading the review; in-distribution and optimistic, not independent. Known-cases: development design cases that informed policy.",
+  "counts": {
+    "dev": 104,
+    "test": 102,
+    "known-cases": 15,
+    "blind": 50
+  },
+  "sha256": {
+    "dev.jsonl": "5fa9a2abd09571112bcbb85c0ee3f10435ba112df0e529543a484e43a962a75e",
+    "test.jsonl": "b1eb8f5e2da3b1f98a50cd523790a15c0aa501f252217e6569175869ccd930bd",
+    "known-cases.jsonl": "c85022019e0d6cc3e6bf4efe9566a345bcca03e04202eae09d20b300cdd5a355",
+    "blind.jsonl": "e3b170ec6878cce7671f4e232069e96a87632c98a20c3667c633af8f8f64a747"
+  }
+}

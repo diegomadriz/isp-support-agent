@@ -1,0 +1,5 @@
+{
+  "dependencies": ["."],
+  "graphs": {"support": "./src/isp_support_agent/studio.py:graph"},
+  "env": ".env"
+}

@@ -1,0 +1,35 @@
+# Optional model services. Validate with config; starting this profile downloads weights.
+services:
+  app:
+    environment:
+      AGENT_MODEL_BACKEND: ollama
+      AGENT_MODEL_BASE_URL: http://ollama:11434
+      AGENT_MODEL_NAME: gemma4:latest
+      AGENT_MODEL_TIMEOUT: 6
+    depends_on:
+      ollama-init:
+        condition: service_completed_successfully
+  ollama:
+    image: ollama/ollama:0.24.0
+    profiles: [ollama]
+    volumes:
+      - models:/root/.ollama
+    healthcheck:
+      test: [CMD, ollama, list]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  ollama-init:
+    image: ollama/ollama:0.24.0
+    profiles: [ollama]
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: [ollama]
+    command: [pull, gemma4:latest]
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: "no"
+volumes:
+  models:

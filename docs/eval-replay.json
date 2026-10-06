@@ -1,0 +1,935 @@
+{
+  "config_hash": "5714599fa78585bc715264e998503fc0f4600d6c9ab197cb963159d91493f94e",
+  "baseline": {
+    "dev": {
+      "correct": 98,
+      "count": 104,
+      "accuracy": 0.9423076923076923
+    },
+    "test": {
+      "correct": 100,
+      "count": 102,
+      "accuracy": 0.9803921568627451
+    },
+    "known-cases": {
+      "correct": 14,
+      "count": 15,
+      "accuracy": 0.9333333333333333
+    },
+    "blind": {
+      "correct": 48,
+      "count": 50,
+      "accuracy": 0.96
+    },
+    "options": {
+      "correct": 4,
+      "count": 4,
+      "accuracy": 1.0
+    }
+  },
+  "split_provenance": {
+    "dev": "104 development messages used for few-shot examples and development.",
+    "test": "102 synthetic messages written during development by the same authors after design feedback; one shared exact example and several paraphrases. In-distribution, optimistic and not independent. Scores were not used to tune the policy.",
+    "known-cases": "15 development design cases used for guardrails and prompt instructions; not held out.",
+    "blind": "50 synthetic messages: 25 each from Gemini and Grok in fresh chats with no project context, using only intent definitions. Labels were checked by hand before evaluation (x22: unclear; x23: escalate); messages and labels are frozen.",
+    "options": "Four suggested phrases declared separately and recorded with the live model. A small routing check, not an independent accuracy set."
+  },
+  "blind_status": "50 synthetic messages: 25 each from Gemini and Grok in fresh chats with no project context, using only intent definitions. Labels were checked by hand before evaluation (x22: unclear; x23: escalate); messages and labels are frozen.",
+  "splits": {
+    "dev": {
+      "count": 104,
+      "correct": 98,
+      "accuracy": 0.9423076923076923,
+      "critical_count": 36,
+      "critical_hits": 36,
+      "critical_recall": 1.0,
+      "per_intent": {
+        "escalate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 36
+        },
+        "diagnose": {
+          "precision": 0.9473684210526315,
+          "recall": 1.0,
+          "support": 18
+        },
+        "billing": {
+          "precision": 0.7058823529411765,
+          "recall": 1.0,
+          "support": 12
+        },
+        "admin": {
+          "precision": 1.0,
+          "recall": 0.5454545454545454,
+          "support": 11
+        },
+        "tickets": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 7
+        },
+        "resolved": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 6
+        },
+        "reset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 4
+        },
+        "unclear": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "support": 10
+        },
+        "thanks": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": {
+        "escalate": {
+          "escalate": 36,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "diagnose": {
+          "escalate": 0,
+          "diagnose": 18,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "billing": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 12,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "admin": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 5,
+          "admin": 6,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "tickets": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 7,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "resolved": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 6,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "reset": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 4,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "unclear": {
+          "escalate": 0,
+          "diagnose": 1,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 9,
+          "thanks": 0
+        },
+        "thanks": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        }
+      },
+      "misses": [
+        {
+          "id": "m070",
+          "message": "Quiero una aclaración de mi recibo",
+          "expected": "admin",
+          "predicted": "billing"
+        },
+        {
+          "id": "m071",
+          "message": "No puedo pagar, necesito ayuda",
+          "expected": "admin",
+          "predicted": "billing"
+        },
+        {
+          "id": "m072",
+          "message": "Me hicieron un cargo doble",
+          "expected": "admin",
+          "predicted": "billing"
+        },
+        {
+          "id": "m073",
+          "message": "Hay un cargo incorrecto",
+          "expected": "admin",
+          "predicted": "billing"
+        },
+        {
+          "id": "m074",
+          "message": "Quiero un reembolso",
+          "expected": "admin",
+          "predicted": "billing"
+        },
+        {
+          "id": "m104",
+          "message": "El aparato hace cosas raras",
+          "expected": "unclear",
+          "predicted": "diagnose"
+        }
+      ],
+      "paths": {
+        "critical_rule": 36,
+        "model": 60,
+        "control:reset": 4,
+        "privacy_guard": 4
+      },
+      "model_calls": 60,
+      "critical_intent_hits": 36,
+      "unclassified_alerts": 0
+    },
+    "test": {
+      "count": 102,
+      "correct": 100,
+      "accuracy": 0.9803921568627451,
+      "critical_count": 30,
+      "critical_hits": 30,
+      "critical_recall": 1.0,
+      "per_intent": {
+        "escalate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 30
+        },
+        "diagnose": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 16
+        },
+        "billing": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "support": 12
+        },
+        "admin": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "support": 12
+        },
+        "tickets": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 8
+        },
+        "resolved": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 6
+        },
+        "reset": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 4
+        },
+        "unclear": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 10
+        },
+        "thanks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 4
+        }
+      },
+      "confusion_matrix": {
+        "escalate": {
+          "escalate": 30,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "diagnose": {
+          "escalate": 0,
+          "diagnose": 16,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "billing": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 12,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "admin": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 2,
+          "admin": 10,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "tickets": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 8,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "resolved": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 6,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "reset": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 4,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "unclear": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 10,
+          "thanks": 0
+        },
+        "thanks": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 4
+        }
+      },
+      "misses": [
+        {
+          "id": "a04",
+          "message": "Me cobraron dos veces la misma mensualidad.",
+          "expected": "admin",
+          "predicted": "billing"
+        },
+        {
+          "id": "a07",
+          "message": "¿Me pueden devolver el cargo que no corresponde?",
+          "expected": "admin",
+          "predicted": "billing"
+        }
+      ],
+      "paths": {
+        "model": 80,
+        "critical_rule": 17,
+        "control:reset": 4,
+        "control:welcome": 1
+      },
+      "model_calls": 80,
+      "critical_intent_hits": 30,
+      "unclassified_alerts": 0
+    },
+    "known-cases": {
+      "count": 15,
+      "correct": 14,
+      "accuracy": 0.9333333333333333,
+      "critical_count": 6,
+      "critical_hits": 6,
+      "critical_recall": 1.0,
+      "per_intent": {
+        "escalate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 6
+        },
+        "diagnose": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "support": 4
+        },
+        "billing": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "admin": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "tickets": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "resolved": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        },
+        "reset": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        },
+        "unclear": {
+          "precision": 0.0,
+          "recall": 0,
+          "support": 0
+        },
+        "thanks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        }
+      },
+      "confusion_matrix": {
+        "escalate": {
+          "escalate": 6,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "diagnose": {
+          "escalate": 0,
+          "diagnose": 3,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 1,
+          "thanks": 0
+        },
+        "billing": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 1,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "admin": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 2,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "tickets": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 1,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "resolved": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "reset": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "unclear": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "thanks": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 1
+        }
+      },
+      "misses": [
+        {
+          "id": "rev13",
+          "message": "buenas, tengo un problema con el internet",
+          "expected": "diagnose",
+          "predicted": "unclear"
+        }
+      ],
+      "paths": {
+        "critical_rule": 6,
+        "model": 9
+      },
+      "model_calls": 9,
+      "critical_intent_hits": 6,
+      "unclassified_alerts": 0
+    },
+    "blind": {
+      "count": 50,
+      "correct": 48,
+      "accuracy": 0.96,
+      "critical_count": 17,
+      "critical_hits": 17,
+      "critical_recall": 1.0,
+      "per_intent": {
+        "escalate": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 17
+        },
+        "diagnose": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "support": 10
+        },
+        "billing": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 4
+        },
+        "admin": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 4
+        },
+        "tickets": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 3
+        },
+        "resolved": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "reset": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "support": 2
+        },
+        "unclear": {
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "support": 6
+        },
+        "thanks": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "confusion_matrix": {
+        "escalate": {
+          "escalate": 17,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "diagnose": {
+          "escalate": 0,
+          "diagnose": 10,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "billing": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 4,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "admin": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 4,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "tickets": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 3,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "resolved": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 2,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "reset": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 1,
+          "unclear": 1,
+          "thanks": 0
+        },
+        "unclear": {
+          "escalate": 0,
+          "diagnose": 1,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 5,
+          "thanks": 0
+        },
+        "thanks": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 2
+        }
+      },
+      "misses": [
+        {
+          "id": "x07",
+          "message": "menu principal",
+          "expected": "reset",
+          "predicted": "unclear"
+        },
+        {
+          "id": "x22",
+          "message": "Oye vdd que a la Smart TV le puedo conectar cable ethernet directo para q no se trabe el izzi go o por q no me agarra bien con el puro wifi?",
+          "expected": "unclear",
+          "predicted": "diagnose"
+        }
+      ],
+      "paths": {
+        "critical_rule": 12,
+        "model": 35,
+        "privacy_guard": 2,
+        "control:welcome": 1
+      },
+      "model_calls": 35,
+      "critical_intent_hits": 17,
+      "unclassified_alerts": 0
+    },
+    "options": {
+      "count": 4,
+      "correct": 4,
+      "accuracy": 1.0,
+      "critical_count": 0,
+      "critical_hits": 0,
+      "critical_recall": 0,
+      "per_intent": {
+        "escalate": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        },
+        "diagnose": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "billing": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "admin": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        },
+        "tickets": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "resolved": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        },
+        "reset": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        },
+        "unclear": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "thanks": {
+          "precision": 0,
+          "recall": 0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": {
+        "escalate": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "diagnose": {
+          "escalate": 0,
+          "diagnose": 1,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "billing": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 1,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "admin": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "tickets": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 1,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "resolved": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "reset": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        },
+        "unclear": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 1,
+          "thanks": 0
+        },
+        "thanks": {
+          "escalate": 0,
+          "diagnose": 0,
+          "billing": 0,
+          "admin": 0,
+          "tickets": 0,
+          "resolved": 0,
+          "reset": 0,
+          "unclear": 0,
+          "thanks": 0
+        }
+      },
+      "misses": [],
+      "paths": {
+        "model": 4
+      },
+      "model_calls": 4,
+      "critical_intent_hits": 0,
+      "unclassified_alerts": 0
+    }
+  }
+}

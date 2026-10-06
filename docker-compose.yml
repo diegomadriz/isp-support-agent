@@ -1,0 +1,29 @@
+name: isp-support-agent
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${AGENT_PORT:-5000}:5000"
+    environment:
+      AGENT_MODEL_BACKEND: ${AGENT_MODEL_BACKEND:-stub}
+      AGENT_MODEL_BASE_URL: ${AGENT_MODEL_BASE_URL:-}
+      AGENT_MODEL_NAME: ${AGENT_MODEL_NAME:-}
+      AGENT_MODEL_KEY: ${AGENT_MODEL_KEY:-}
+      AGENT_MODEL_TIMEOUT: 6
+      AGENT_STAFF_PANEL: "false"
+      AGENT_REWRITE_TIMEOUT: 8
+      AGENT_REWRITE: ${AGENT_REWRITE:-}
+      AGENT_DB_PATH: /data/conversations.sqlite
+      AGENT_COMPANY_NAME: ${AGENT_COMPANY_NAME:-Soporte}
+      AGENT_BOT_NAME: ${AGENT_BOT_NAME:-}
+      AGENT_SESSION_SECRET: ${AGENT_SESSION_SECRET:-}
+      AGENT_WHATSAPP_SENDER: ${AGENT_WHATSAPP_SENDER:-fake}
+      AGENT_WHATSAPP_BASE_URL: ${AGENT_WHATSAPP_BASE_URL:-}
+      AGENT_WHATSAPP_ACCESS_TOKEN: ${AGENT_WHATSAPP_ACCESS_TOKEN:-}
+      AGENT_WHATSAPP_VERIFY_TOKEN: ${AGENT_WHATSAPP_VERIFY_TOKEN:-}
+      AGENT_WHATSAPP_APP_SECRET: ${AGENT_WHATSAPP_APP_SECRET:-}
+    volumes:
+      - checkpoints:/data
+    restart: unless-stopped
+volumes:
+  checkpoints:

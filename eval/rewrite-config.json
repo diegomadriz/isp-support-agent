@@ -1,0 +1,19 @@
+{
+  "backend": "ollama",
+  "model": "gemma4:latest",
+  "confidence_threshold": 0.7,
+  "request_timeout_seconds": 6,
+  "ollama_options": {
+    "think": false,
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 512
+  },
+  "model_digest": "bcf306d5dbda8ae04ab78bab3fe3e97c412be0ef3614b607406284eed3acee36",
+  "rewrite_prompt_sha256": "df797d677aaf0e4731431997145b8ca68ce553634685f9b55ea3894d2c79396a",
+  "rewrite": true,
+  "rewrite_timeout_seconds": 8,
+  "turn_budget_seconds": 8,
+  "minimum_rewrite_remaining_seconds": 1.5
+}

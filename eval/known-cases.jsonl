@@ -1,0 +1,15 @@
+{"id": "rev01", "message": "No tengo señal de internet", "intent": "escalate", "escalation": true}
+{"id": "rev02", "message": "Se me fue el internet", "intent": "escalate", "escalation": true}
+{"id": "rev03", "message": "No hay red en la casa", "intent": "escalate", "escalation": true}
+{"id": "rev04", "message": "el modem tiene un foquito rojo", "intent": "escalate", "escalation": true}
+{"id": "rev05", "message": "Lleva todo el día caído el servicio", "intent": "escalate", "escalation": true}
+{"id": "rev06", "message": "Cortaron el cable de la calle", "intent": "escalate", "escalation": true}
+{"id": "rev07", "message": "Los recibos me llegan con el saldo en rojo", "intent": "billing", "escalation": false}
+{"id": "rev08", "message": "¿Ya quedó mi reporte?", "intent": "tickets", "escalation": false}
+{"id": "rev09", "message": "Ya funciona pero sigue lento", "intent": "diagnose", "escalation": false}
+{"id": "rev10", "message": "Ya funcionó el reinicio pero sigue la intermitencia", "intent": "diagnose", "escalation": false}
+{"id": "rev11", "message": "Quiero actualizar mis datos de cliente", "intent": "admin", "escalation": false}
+{"id": "rev12", "message": "Quiero darme de baja", "intent": "admin", "escalation": false}
+{"id": "rev13", "message": "buenas, tengo un problema con el internet", "intent": "diagnose", "escalation": false}
+{"id": "rev14", "message": "se traba mucho netflix", "intent": "diagnose", "escalation": false}
+{"id": "rev15", "message": "gracias", "intent": "thanks", "escalation": false}

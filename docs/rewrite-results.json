@@ -1,0 +1,81 @@
+{
+  "adoption": {
+    "adopted": true,
+    "date": "2026-10-06",
+    "previous_trial": {
+      "accepted": 268,
+      "attempted": 271,
+      "added_latency_p95_ms": 4286.01,
+      "target_ms": 3000,
+      "classification_included": false,
+      "status_at_trial_time": "target missed"
+    },
+    "latency_limit_seconds": 8,
+    "reason": "A few seconds is normal in a conversational WhatsApp exchange.",
+    "preference": "Warmer replies preferred in a side-by-side read; no item-by-item scores."
+  },
+  "conversations": 70,
+  "groups": {
+    "demo": 16,
+    "blind": 50,
+    "options": 4
+  },
+  "sent_messages": 381,
+  "verified_messages": 294,
+  "attempted": 294,
+  "skipped_unverified": 87,
+  "accepted": 263,
+  "acceptance_rate": 0.8945578231292517,
+  "accepted_changed": 30,
+  "reasons": {
+    "accepted": 263,
+    "missing_required_fact": 4,
+    "timeout": 27
+  },
+  "leaks": 0,
+  "draft_tone_flags": {},
+  "sent_tone_violations": 0,
+  "facts_preserved_messages": 381,
+  "required_facts_preserved": 1.0,
+  "turn_latency_ms": {
+    "p50": 4131.606,
+    "p95": 8005.621
+  },
+  "verified_turn_latency_ms": {
+    "p50": 5582.574,
+    "p95": 8005.901
+  },
+  "added_latency_ms": {
+    "p50": 3441.809,
+    "p95": 4124.453
+  },
+  "model_latency_ms": {
+    "p50": 2051.605,
+    "p95": 4114.295
+  },
+  "length_change_percent": {
+    "mean": 3.966,
+    "p50": 0.0,
+    "p95": 27.778
+  },
+  "paired_route_changes": 1,
+  "automatic_checks": {
+    "zero_leaks": true,
+    "all_required_facts": true,
+    "zero_sent_tone_violations": true,
+    "acceptance_at_least_85_percent": true,
+    "p95_turn_latency_under_8_seconds": false
+  },
+  "automatic_criteria_pass": false,
+  "decision": "live rewriting enabled with template fallback",
+  "timings": "live end-to-end graph turns, including classification; replay retains measurements",
+  "config_hash": "330fcbd7f199fb14cee93bafec5f5cdaab017749e4d4db794223baed3253148f",
+  "decision_rule": {
+    "leaks": 0,
+    "required_facts_preserved": 1.0,
+    "minimum_acceptance": 0.85,
+    "turn_budget_seconds": 8,
+    "classification_limit_seconds": 6,
+    "minimum_rewrite_remaining_seconds": 1.5
+  }
+}

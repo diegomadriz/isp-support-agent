@@ -1,0 +1,98 @@
+[
+  {
+    "id": "m001",
+    "message": "No tengo internet desde anoche",
+    "intent": "escalate",
+    "escalation": true
+  },
+  {
+    "id": "m002",
+    "message": "SIN SERVICIO, ayuda porfa",
+    "intent": "escalate",
+    "escalation": true
+  },
+  {
+    "id": "m037",
+    "message": "Mi internet está lento",
+    "intent": "diagnose",
+    "escalation": false
+  },
+  {
+    "id": "m038",
+    "message": "La conexión es intermitente",
+    "intent": "diagnose",
+    "escalation": false
+  },
+  {
+    "id": "m055",
+    "message": "¿Cómo está mi pago?",
+    "intent": "billing",
+    "escalation": false
+  },
+  {
+    "id": "m056",
+    "message": "Quiero consultar mi saldo",
+    "intent": "billing",
+    "escalation": false
+  },
+  {
+    "id": "m067",
+    "message": "Quiero cambiar mi plan",
+    "intent": "admin",
+    "escalation": false
+  },
+  {
+    "id": "m068",
+    "message": "Necesito cancelar el servicio",
+    "intent": "admin",
+    "escalation": false
+  },
+  {
+    "id": "m078",
+    "message": "Quiero ver mis tickets",
+    "intent": "tickets",
+    "escalation": false
+  },
+  {
+    "id": "m079",
+    "message": "¿Cómo va mi folio?",
+    "intent": "tickets",
+    "escalation": false
+  },
+  {
+    "id": "m085",
+    "message": "Ya quedó, gracias",
+    "intent": "resolved",
+    "escalation": false
+  },
+  {
+    "id": "m086",
+    "message": "Ya funciona todo bien",
+    "intent": "resolved",
+    "escalation": false
+  },
+  {
+    "id": "m091",
+    "message": "reiniciar",
+    "intent": "reset",
+    "escalation": false
+  },
+  {
+    "id": "m092",
+    "message": "RESET",
+    "intent": "reset",
+    "escalation": false
+  },
+  {
+    "id": "m095",
+    "message": "Hola, buenas",
+    "intent": "unclear",
+    "escalation": false
+  },
+  {
+    "id": "m096",
+    "message": "Ayuda porfa",
+    "intent": "unclear",
+    "escalation": false
+  }
+]

@@ -1,0 +1,107 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	classify(classify)
+	welcome(welcome)
+	unclear(unclear)
+	thanks(thanks)
+	billing(billing)
+	tickets(tickets)
+	escalate(escalate)
+	admin(admin)
+	resolved(resolved)
+	reset(reset)
+	respond(respond)
+	rewrite(rewrite)
+	__end__([<p>__end__</p>]):::last
+	__start__ -.-> identity\3abegin;
+	__start__ -.-> reset;
+	admin --> ticket_confirmation\3a__start__;
+	billing --> respond;
+	classify -.-> admin;
+	classify -.-> billing;
+	classify -.-> diagnostics\3aprepare_probes;
+	classify -.-> escalate;
+	classify -.-> reset;
+	classify -.-> resolved;
+	classify -.-> respond;
+	classify -.-> thanks;
+	classify -.-> tickets;
+	classify -.-> unclear;
+	diagnostics\3averdict -.-> respond;
+	diagnostics\3averdict -.-> ticket_confirmation\3a__start__;
+	escalate --> ticket_confirmation\3a__start__;
+	identity\3a__end__ -.-> classify;
+	identity\3a__end__ -.-> respond;
+	identity\3a__end__ -.-> welcome;
+	reset --> respond;
+	resolved --> ticket_confirmation\3a__start__;
+	respond --> rewrite;
+	thanks --> respond;
+	ticket_confirmation\3a__end__ --> respond;
+	tickets --> respond;
+	unclear -.-> respond;
+	unclear -.-> ticket_confirmation\3a__start__;
+	welcome --> respond;
+	rewrite --> __end__;
+	subgraph identity
+	identity\3abegin(begin)
+	identity\3aidentify(identify)
+	identity\3averify(verify)
+	identity\3adenied(denied)
+	identity\3aok(ok)
+	identity\3astop(stop)
+	identity\3a__end__(<p>__end__</p>)
+	identity\3abegin -.-> identity\3adenied;
+	identity\3abegin -.-> identity\3aidentify;
+	identity\3abegin -.-> identity\3aok;
+	identity\3abegin -.-> identity\3astop;
+	identity\3abegin -.-> identity\3averify;
+	identity\3aidentify -.-> identity\3adenied;
+	identity\3aidentify -.-> identity\3aok;
+	identity\3aidentify -.-> identity\3astop;
+	identity\3aidentify -.-> identity\3averify;
+	identity\3averify -.-> identity\3adenied;
+	identity\3averify -.-> identity\3aidentify;
+	identity\3averify -.-> identity\3aok;
+	identity\3averify -.-> identity\3astop;
+	identity\3adenied --> identity\3a__end__;
+	identity\3aok --> identity\3a__end__;
+	identity\3astop --> identity\3a__end__;
+	identity\3aidentify -.-> identity\3aidentify;
+	identity\3averify -.-> identity\3averify;
+	end
+	subgraph diagnostics
+	diagnostics\3aprepare_probes(prepare_probes)
+	diagnostics\3aprobe(probe)
+	diagnostics\3averdict(verdict)
+	diagnostics\3aprepare_probes -.-> diagnostics\3aprobe;
+	diagnostics\3aprepare_probes -.-> diagnostics\3averdict;
+	diagnostics\3aprobe --> diagnostics\3averdict;
+	end
+	subgraph ticket_confirmation
+	ticket_confirmation\3a__start__(<p>__start__</p>)
+	ticket_confirmation\3aprepare(prepare)
+	ticket_confirmation\3areply(reply)
+	ticket_confirmation\3arewrite(rewrite)
+	ticket_confirmation\3aask(ask)
+	ticket_confirmation\3acommit(commit)
+	ticket_confirmation\3a__end__(<p>__end__</p>)
+	ticket_confirmation\3a__start__ --> ticket_confirmation\3aprepare;
+	ticket_confirmation\3aask -.-> ticket_confirmation\3a__end__;
+	ticket_confirmation\3aask -.-> ticket_confirmation\3acommit;
+	ticket_confirmation\3aask -.-> ticket_confirmation\3aprepare;
+	ticket_confirmation\3aask -. &nbsp;ask&nbsp; .-> ticket_confirmation\3areply;
+	ticket_confirmation\3aprepare --> ticket_confirmation\3areply;
+	ticket_confirmation\3areply --> ticket_confirmation\3arewrite;
+	ticket_confirmation\3arewrite --> ticket_confirmation\3aask;
+	ticket_confirmation\3acommit --> ticket_confirmation\3a__end__;
+	end
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
+

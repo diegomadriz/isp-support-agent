@@ -1,0 +1,288 @@
+{
+  "seed": {
+    "customers": [
+      {
+        "id": 12,
+        "phone_last4": "1234",
+        "payment_status": "al corriente",
+        "amount_due": 0,
+        "due_date": "2026-10-15",
+        "payment_method": "transferencia con tu número de cliente como referencia"
+      },
+      {
+        "id": 24,
+        "phone_last4": "5678",
+        "payment_status": "pendiente",
+        "amount_due": 499,
+        "due_date": "2026-10-15",
+        "payment_method": "transferencia con tu número de cliente como referencia"
+      }
+    ],
+    "services": [
+      {
+        "customer_id": 12,
+        "cpe_address": "192.0.2.12",
+        "radio_address": "198.51.100.12",
+        "area": "demo-norte"
+      },
+      {
+        "customer_id": 24,
+        "cpe_address": "192.0.2.24",
+        "radio_address": "198.51.100.12",
+        "area": "demo-norte"
+      }
+    ],
+    "network": {
+      "cpe": {
+        "reachable": true,
+        "loss_pct": 0,
+        "rtt_ms": 12
+      },
+      "radio": {
+        "signal_dbm": -60,
+        "noise_dbm": -95,
+        "quality_pct": 98,
+        "capacity_mbps": 80
+      },
+      "upstream": {
+        "loss_pct": 0,
+        "latency_ms": 20,
+        "hop_count": 3,
+        "hops": [
+          "192.0.2.1",
+          "198.51.100.1",
+          "203.0.113.1"
+        ]
+      },
+      "outage": {
+        "active": false
+      }
+    }
+  },
+  "scenarios": {
+    "healthy": {
+      "network": {},
+      "conversation": [
+        "hola",
+        "cliente 12",
+        "1234",
+        "Se traba mucho Netflix en mi celular",
+        "Gracias, voy a probar eso"
+      ]
+    },
+    "weak_radio_signal": {
+      "network": {
+        "radio": {
+          "signal_dbm": -84
+        }
+      },
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "Mi conexión está lenta desde ayer",
+        "Sí, por favor",
+        "Ver mis tickets",
+        "gracias"
+      ]
+    },
+    "last_mile_down": {
+      "network": {
+        "cpe": {
+          "reachable": false,
+          "loss_pct": 100,
+          "rtt_ms": null
+        }
+      },
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "Tengo desconexión frecuente",
+        "va",
+        "Ver mis tickets"
+      ]
+    },
+    "upstream_packet_loss": {
+      "network": {
+        "upstream": {
+          "loss_pct": 35
+        }
+      },
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "Las videollamadas se traban y está lento",
+        "dale",
+        "gracias"
+      ]
+    },
+    "area_outage": {
+      "network": {
+        "outage": {
+          "active": true
+        }
+      },
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "Mi conexión está intermitente",
+        "Ver mis tickets",
+        "gracias"
+      ]
+    },
+    "probe_timeout": {
+      "network": {
+        "failures": {
+          "radio": "timeout"
+        }
+      },
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "El Wi-Fi está lento",
+        "ok",
+        "gracias"
+      ]
+    },
+    "existing_open_ticket": {
+      "network": {
+        "radio": {
+          "quality_pct": 45
+        }
+      },
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "Mi conexión sigue lenta",
+        "Sí, por favor",
+        "Ver mis tickets"
+      ],
+      "tickets": [
+        {
+          "id": 1001,
+          "customer_id": 12,
+          "category": "technical",
+          "notes": [
+            "Seeded open report."
+          ]
+        }
+      ]
+    },
+    "billing": {
+      "network": {},
+      "conversation": [
+        "cliente 24",
+        "5678",
+        "¿Cuánto debo y cómo pago?",
+        "Quiero ver mis tickets",
+        "gracias"
+      ]
+    },
+    "unknown_customer": {
+      "network": {},
+      "conversation": [
+        "cliente 999",
+        "0000",
+        "0000",
+        "0000"
+      ]
+    },
+    "failed_verification": {
+      "network": {},
+      "conversation": [
+        "cliente 12",
+        "0000",
+        "9999",
+        "1111",
+        "reiniciar",
+        "cliente 12",
+        "1234"
+      ]
+    },
+    "unclear": {
+      "network": {},
+      "conversation": [
+        "hola",
+        "no me acuerdo",
+        "cliente 12",
+        "1234",
+        "Oiga eso no",
+        "Necesito ver mis tickets"
+      ]
+    },
+    "critical_mixed": {
+      "network": {},
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "No tengo internet y quiero ver mis tickets",
+        "no gracias",
+        "Ver mis tickets"
+      ]
+    },
+    "administrative": {
+      "network": {},
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "Quiero darme de baja",
+        "Sí, claro",
+        "Ver mis tickets"
+      ]
+    },
+    "confirmed_resolution": {
+      "network": {
+        "radio": {
+          "quality_pct": 45
+        }
+      },
+      "conversation": [
+        "cliente 12",
+        "1234",
+        "¿Ya quedó mi reporte?",
+        "Ya funciona bien desde ayer",
+        "Sí, por favor",
+        "Ver mis tickets",
+        "gracias"
+      ],
+      "tickets": [
+        {
+          "id": 1001,
+          "customer_id": 12,
+          "category": "technical",
+          "notes": [
+            "Seeded open report."
+          ]
+        }
+      ]
+    },
+    "slow_internet_first": {
+      "network": {
+        "radio": {
+          "signal_dbm": -84
+        }
+      },
+      "conversation": [
+        "El internet está muy lento desde ayer",
+        "cliente 12",
+        "1234",
+        "Sí, por favor",
+        "Ver mis tickets"
+      ]
+    },
+    "clarify_then_diagnose": {
+      "network": {
+        "upstream": {
+          "loss_pct": 35
+        }
+      },
+      "conversation": [
+        "otra vez lo mismo de siempre",
+        "cliente 12",
+        "1234",
+        "se corta todas las noches como a las 9",
+        "Sí, por favor",
+        "Ver mis tickets"
+      ]
+    }
+  }
+}

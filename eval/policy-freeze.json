@@ -1,0 +1,17 @@
+{
+  "before_evaluation_sha256": {
+    "src/isp_support_agent/classification.py": "8bcabcacf4bd313e5808235ec8f2a0f02a28238ad43d12b5c63cd10f0633cbe5",
+    "src/isp_support_agent/language_models.py": "50d9da670aa3151612dd6e865db8e35ae5226125313ac019e940381d555ec3e6",
+    "src/isp_support_agent/fixtures/dev_examples.json": "87422cca7ec646a1217c287b99c0244a76254df59d6726e7a0a52512c3e34199"
+  },
+  "formatted_source_sha256": {
+    "src/isp_support_agent/classification.py": "c65b76076c8656bfb679f47c25430e15075cdd46df2afec5892cd7c2042421c2",
+    "src/isp_support_agent/language_models.py": "a0af1dc07eded05368d5e94d39d0ea4ad7237f7f240f2a7d8a9826b3651b6785",
+    "src/isp_support_agent/fixtures/dev_examples.json": "87422cca7ec646a1217c287b99c0244a76254df59d6726e7a0a52512c3e34199"
+  },
+  "python_ast_sha256": {
+    "src/isp_support_agent/classification.py": "91b6a26dfeb14851910a347d9846b7b3abe3f6c8427089ca1979db5eff1493c5",
+    "src/isp_support_agent/language_models.py": "447f9a619a8daa21279ebc95b337b5c917578f085ca5d3234f1b20767865bdd2"
+  },
+  "note": "Frozen source hashes; the synthetic test scores were not used for policy or prompt tuning."
+}

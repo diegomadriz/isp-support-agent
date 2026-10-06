@@ -1,0 +1,4 @@
+{"id": "o01", "message": "internet lento", "intent": "diagnose", "escalation": false}
+{"id": "o02", "message": "ver mis reportes", "intent": "tickets", "escalation": false}
+{"id": "o03", "message": "pagos", "intent": "billing", "escalation": false}
+{"id": "o04", "message": "otra cosa", "intent": "unclear", "escalation": false}

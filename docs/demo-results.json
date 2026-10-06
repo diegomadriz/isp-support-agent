@@ -1,0 +1,328 @@
+[
+  {
+    "scenario": "healthy",
+    "verified": true,
+    "verdict": "local_wifi_or_device",
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para empezar, escribe tu número de cliente, por ejemplo: cliente 12. Si no lo recuerdas, consulta tu recibo o comunícate con nosotros por teléfono.",
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Revisé tu enlace y responde bien. Prueba acercarte al módem y comparar con otro dispositivo. Si mejora cerca del módem, revisa la cobertura de Wi-Fi; si solo falla un equipo, reinicia ese dispositivo. Si sigue fallando, cuéntame qué sucede.",
+      "Gracias por escribirnos."
+    ]
+  },
+  {
+    "scenario": "weak_radio_signal",
+    "verified": true,
+    "verdict": "weak_radio_signal",
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 3
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Revisé tu enlace y la señal llega débil. Hace falta que el equipo técnico lo revise. ¿Quieres que abra un reporte para dar seguimiento? Responde sí o no.",
+      "Tu solicitud quedó registrada con el folio 1001. El equipo de soporte le dará seguimiento.",
+      "Tus reportes: folio 1001 (abierto).",
+      "Gracias por escribirnos."
+    ]
+  },
+  {
+    "scenario": "last_mile_down",
+    "verified": true,
+    "verdict": "last_mile_down",
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Tu equipo de conexión no responde a la revisión. El equipo técnico necesita revisar el enlace. ¿Quieres que abra un reporte para dar seguimiento? Responde sí o no.",
+      "Tu solicitud quedó registrada con el folio 1001. El equipo de soporte le dará seguimiento.",
+      "Tus reportes: folio 1001 (abierto)."
+    ]
+  },
+  {
+    "scenario": "upstream_packet_loss",
+    "verified": true,
+    "verdict": "upstream_degraded",
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Detecté una falla en la conexión hacia el proveedor. Necesitamos una revisión técnica. ¿Quieres que abra un reporte para dar seguimiento? Responde sí o no.",
+      "Tu solicitud quedó registrada con el folio 1001. El equipo de soporte le dará seguimiento.",
+      "Gracias por escribirnos."
+    ]
+  },
+  {
+    "scenario": "area_outage",
+    "verified": true,
+    "verdict": "area_outage",
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 1,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 1,
+      "stub": 3
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Hay una falla registrada en tu zona. Avisé al equipo técnico; por ahora no necesitas abrir otro reporte. No tengo un horario de restablecimiento confirmado.",
+      "No tienes reportes registrados.",
+      "Gracias por escribirnos."
+    ]
+  },
+  {
+    "scenario": "probe_timeout",
+    "verified": true,
+    "verdict": "inconclusive",
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "No pude completar todas las comprobaciones. Necesitamos una revisión técnica para encontrar la causa. ¿Quieres que abra un reporte para dar seguimiento? Responde sí o no.",
+      "Tu solicitud quedó registrada con el folio 1001. El equipo de soporte le dará seguimiento.",
+      "Gracias por escribirnos."
+    ]
+  },
+  {
+    "scenario": "existing_open_ticket",
+    "verified": true,
+    "verdict": "weak_radio_signal",
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Revisé tu enlace y la señal llega débil. Hace falta que el equipo técnico lo revise. Ya tienes el folio 1001 abierto. ¿Agrego esta revisión al reporte? Responde sí o no.",
+      "Agregué la revisión al folio 1001. El equipo de soporte le dará seguimiento.",
+      "Tus reportes: folio 1001 (abierto)."
+    ]
+  },
+  {
+    "scenario": "billing",
+    "verified": true,
+    "verdict": null,
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 1,
+      "stub": 3
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Tu pago está pendiente. Tienes un saldo de $499 MXN, con vencimiento el 2026-10-15. Puedes pagar por transferencia con tu número de cliente como referencia.",
+      "No tienes reportes registrados.",
+      "Gracias por escribirnos."
+    ]
+  },
+  {
+    "scenario": "unknown_customer",
+    "verified": false,
+    "verdict": null,
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 3
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Los dígitos no coinciden. Te quedan 2 intentos. Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Los dígitos no coinciden. Te queda 1 intento. Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "No pude verificar tu identidad. Por seguridad, los intentos están bloqueados temporalmente. Comunícate con nosotros por teléfono para recibir ayuda."
+    ]
+  },
+  {
+    "scenario": "failed_verification",
+    "verified": false,
+    "verdict": null,
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 3,
+      "interrupt_resume": 3,
+      "reset_control": 1
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Los dígitos no coinciden. Te quedan 2 intentos. Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Los dígitos no coinciden. Te queda 1 intento. Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "No pude verificar tu identidad. Por seguridad, los intentos están bloqueados temporalmente. Comunícate con nosotros por teléfono para recibir ayuda.",
+      "Conversación reiniciada. Para empezar, escribe tu número de cliente, por ejemplo: cliente 12. Si no lo recuerdas, consulta tu recibo o comunícate con nosotros por teléfono.",
+      "No pude verificar tu identidad. Por seguridad, los intentos están bloqueados temporalmente. Comunícate con nosotros por teléfono para recibir ayuda.",
+      "No pude verificar tu identidad. Por seguridad, los intentos están bloqueados temporalmente. Comunícate con nosotros por teléfono para recibir ayuda."
+    ]
+  },
+  {
+    "scenario": "unclear",
+    "verified": true,
+    "verdict": null,
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 3,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para empezar, escribe tu número de cliente, por ejemplo: cliente 12. Si no lo recuerdas, consulta tu recibo o comunícate con nosotros por teléfono.",
+      "Ese dato no parece un número de cliente. Para empezar, escribe tu número de cliente, por ejemplo: cliente 12. Si no lo recuerdas, consulta tu recibo o comunícate con nosotros por teléfono.",
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "¿Necesitas ayuda con tu conexión, un pago o un reporte? Cuéntame qué está pasando. Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "No tienes reportes registrados."
+    ]
+  },
+  {
+    "scenario": "critical_mixed",
+    "verified": true,
+    "verdict": null,
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 1,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "critical_rule": 1,
+      "stub": 1
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Lamento que estés sin servicio o con una falla de este tipo. Ya avisé al equipo técnico para que lo revise. Si ves un cable roto, evita tocarlo. No tienes reportes registrados. ¿Quieres que abra un reporte para dar seguimiento? Responde sí o no.",
+      "De acuerdo, no hice cambios en tus reportes. Si necesitas algo más, aquí estoy.",
+      "No tienes reportes registrados."
+    ]
+  },
+  {
+    "scenario": "administrative",
+    "verified": true,
+    "verdict": null,
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Entiendo que quieres dar de baja el servicio. ¿Quieres que registre esta solicitud administrativa para que el equipo la revise? Responde sí o no.",
+      "Tu solicitud quedó registrada con el folio 1001. El equipo de soporte le dará seguimiento.",
+      "Tus reportes: folio 1001 (abierto)."
+    ]
+  },
+  {
+    "scenario": "confirmed_resolution",
+    "verified": true,
+    "verdict": null,
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 4
+    },
+    "customer_messages": [
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Te atiende el equipo de soporte. Tu identidad quedó verificada. ¿En qué puedo ayudarte: conexión, pagos o reportes? Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Tus reportes: folio 1001 (abierto).",
+      "Me alegra que haya mejorado tu conexión. ¿Confirmas que el problema terminó y cierro el folio 1001? Responde sí o no.",
+      "¡Qué bueno que ya funciona! Cerré el folio 1001 y registré la resolución. Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "Tus reportes: folio 1001 (resuelto).",
+      "Gracias por escribirnos."
+    ]
+  },
+  {
+    "scenario": "slow_internet_first",
+    "verified": true,
+    "verdict": "weak_radio_signal",
+    "tickets": 1,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 2,
+      "stub": 2
+    },
+    "customer_messages": [
+      "Para empezar, escribe tu número de cliente, por ejemplo: cliente 12. Si no lo recuerdas, consulta tu recibo o comunícate con nosotros por teléfono.",
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "Revisé tu enlace y la señal llega débil. Hace falta que el equipo técnico lo revise. ¿Quieres que abra un reporte para dar seguimiento? Responde sí o no.",
+      "Tu solicitud quedó registrada con el folio 1001. El equipo de soporte le dará seguimiento.",
+      "Tus reportes: folio 1001 (abierto)."
+    ]
+  },
+  {
+    "scenario": "clarify_then_diagnose",
+    "verified": true,
+    "verdict": null,
+    "tickets": 0,
+    "awaiting": null,
+    "staff_alerts": 0,
+    "runtime_paths": {
+      "identity_or_welcome": 1,
+      "interrupt_resume": 1,
+      "stub": 4
+    },
+    "customer_messages": [
+      "Para empezar, escribe tu número de cliente, por ejemplo: cliente 12. Si no lo recuerdas, consulta tu recibo o comunícate con nosotros por teléfono.",
+      "Para verificar tu identidad, escribe los últimos cuatro dígitos del teléfono registrado.",
+      "¿Necesitas ayuda con tu conexión, un pago o un reporte? Cuéntame qué está pasando. Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "¿Necesitas ayuda con tu conexión, un pago o un reporte? Cuéntame qué está pasando. Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "¿Necesitas ayuda con tu conexión, un pago o un reporte? Cuéntame qué está pasando. Puedes escribirme, por ejemplo: «internet lento», «ver mis reportes», «pagos» u «otra cosa».",
+      "No tienes reportes registrados."
+    ]
+  }
+]

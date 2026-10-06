@@ -1,0 +1,8 @@
+{
+  "adopted": true,
+  "date": "2026-10-06",
+  "previous_trial": {"accepted": 268, "attempted": 271, "added_latency_p95_ms": 4286.010, "target_ms": 3000, "classification_included": false, "status_at_trial_time": "target missed"},
+  "latency_limit_seconds": 8,
+  "reason": "A few seconds is normal in a conversational WhatsApp exchange.",
+  "preference": "Warmer replies preferred in a side-by-side read; no item-by-item scores."
+}
